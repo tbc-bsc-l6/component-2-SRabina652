@@ -1,9 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerController;
-use App\Models\Post;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +14,18 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/form',[CustomerController::class,'index']);
-Route::post('/form',[CustomerController::class,'postForm']);
-
-Route::get('/',function(){
-   
-  $posts=Post::all();
-    return view('posts',[
-        'posts'=>$posts
-    ]);
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('posts/{post}',function($slug){
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-    //find the post by its slug and pass it to the view called "post"
-    return view('post',[
-    'post'=>Post::find($slug)
-   ]);
-})->where('post','[A-z_\-]+');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
