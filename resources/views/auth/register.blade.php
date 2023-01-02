@@ -4,7 +4,7 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('UserName')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -15,7 +15,29 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <!-- physical address -->
+       
 
+        <div class="mt-4">
+            <x-input-label for="dob" :value="__('dob')" />
+            <x-text-input id="dob" class="block mt-1 w-full" type="date" name="dob" :value="old('dob')" required autofocus />
+            <x-input-error :messages="$errors->get('dob')" class="mt-2" />
+        </div>
+        <div class="mt-4">
+            <x-input-label for="address" :value="__('Address')" />
+            <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus />
+            <x-input-error :messages="$errors->get('address')" class="mt-2" />
+        </div>
+        <!-- gender  -->
+        <div class="mt-4">
+        <label for="Male">Gender:&nbsp;&nbsp;</label>
+          <input type="radio" id="Male" name="gender" value="M">
+          <label for="Male">Male&nbsp;&nbsp;</label>
+          <input type="radio" id="Female" name="gender" value="F">
+          <label for="Female">Female&nbsp;&nbsp;</label>
+          <input type="radio" id="Other" name="gender" value="O">
+          <label for="Other">Other</label><br>
+        </div>
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />

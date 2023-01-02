@@ -23,7 +23,7 @@ return new class extends Migration
             $table->enum('gender',["M","F","O"]);
             $table->date('dob')->nullable();
             $table->boolean('status')->default(0);
-            $table->string('profilePath')->nullable();
+            // $table->string('profilePath')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
