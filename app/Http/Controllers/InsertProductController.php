@@ -13,7 +13,7 @@ class InsertProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.adminDisplayProduct');
     }
 
     /**
@@ -24,6 +24,7 @@ class InsertProductController extends Controller
     public function create()
     {
         //
+        return view('admin.addProduct');
     }
 
     /**
@@ -57,6 +58,7 @@ class InsertProductController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.editProduct');
     }
 
     /**
@@ -69,6 +71,7 @@ class InsertProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return view('admin.updateProduct');
     }
 
     /**
