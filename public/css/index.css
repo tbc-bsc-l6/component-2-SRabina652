@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
 }
 
 h1{
@@ -26,3 +26,21 @@ button{
 
     border: 2px solid #e74c3c;
   }
+
+.link{
+   text-decoration: none;
+   color: green;
+}
+.link:hover{
+    color: white;
+}
+
+.img-thumbnail{
+    width: 70px;
+}
+table{
+    text-align: left
+}
+tr{
+    padding: 5px;
+}

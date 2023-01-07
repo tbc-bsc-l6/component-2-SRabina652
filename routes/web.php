@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\InsertProductController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/addItem',function(){
+    return view('admin.product');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,11 +36,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-//admin section
+// admin section
 Route::prefix('admin')->middleware(['auth','adminOnly'])->group(function(){
-    Route::get('/addProduct',[InsertProductController::class,'create']);
-    Route::get('/editProduct',[InsertProductController::class,'edit']);
-    Route::get('/displayProduct',[InsertProductController::class,'index']);
-    Route::get('/updateProduct',[InsertProductController::class,'update']);
+   Route::resource('product', ProductController::class);
 });
-
