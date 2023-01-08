@@ -12,7 +12,11 @@
 <body>
 
 <div class="container mt-5">
-
+@if($success = \Session::get('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+   {{$success}}
+</div>
+@endif
 <div class="text-right">
 <button type="button" class="btn btn-outline-success fw-bold">
   <a href="{{route('product.create')}}" class="link">AddProduct</a>  
@@ -21,12 +25,8 @@
 @if($products)
 <x-display-products :products="$products"/> 
 @endif
-  
 </div>
 </div>
-    
-
 </div>
-<!-- <x-edit-product/> -->
 </body>
 </html>

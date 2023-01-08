@@ -92,7 +92,14 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=Product::findorFail($id);
+        if(is_null($product)){
+            return redirect('admin.product');
+        }else{
+            $data = compact('product');
+            return view('admin.updateProduct')->with($data);
+        }
+        // return view('admin.updateProduct',compact('id'));
     }
 
     /**
@@ -104,7 +111,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validateAll($request);
+
+        $image='';
+        if($request->ProductImage){
+            $image = time() . '.' . $request->ProductImage->extension();
+            $request->ProductImage->move(public_path('uploads'),$image);
+        }
+        $product=Product::findorFail($id);
+        $product->ProductName = $request->ProductName;
+        $product->ProductPrice = $request->ProductPrice;
+        $product->Quantity = $request->Quantity;
+        $product->ProductImage = $image;
+        $product->save();
+       // print_r($request->all());
+    //    return redirect()->back();
+       return redirect()->route('admin.product')->with('success','Product Data updated Successfully');
+
     }
 
     /**
@@ -115,6 +138,14 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product=Product::findorFail($id);
+        if(!is_null($product)){
+           $product->delete();
+        }
+        return redirect()->back();
+        // echo "<pre>";
+        // print_r($product);
+        // $product->delete();
+        // return redirect()->route('admin.product')->with('success','Product Data deleted Successfully');
     }
 }
