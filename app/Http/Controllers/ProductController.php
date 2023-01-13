@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -42,7 +43,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.addProduct');
+      return view('admin.addProduct');
+    //  return view('product.create');
     }
 
     /**
@@ -68,7 +70,7 @@ class ProductController extends Controller
         $data->ProductImage = $image;
         $data->save();
        // print_r($request->all());
-        return redirect()->route('admin.product')->with('success','Product Data Inserted Successfully');
+        return redirect()->route('product.index')->with('success','Product Data Inserted Successfully');
         // Product::create($request->all());
         // return view('admin.addProduct');
     }
@@ -111,8 +113,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validateAll($request);
-
+        $request->validate([
+            'ProductName' => ['required', 'string', 'max:255'],
+            'ProductPrice' => ['required', 'integer'],
+            'Quantity' => ['required', 'integer'],
+        ]);
         $image='';
         if($request->ProductImage){
             $image = time() . '.' . $request->ProductImage->extension();
@@ -122,11 +127,14 @@ class ProductController extends Controller
         $product->ProductName = $request->ProductName;
         $product->ProductPrice = $request->ProductPrice;
         $product->Quantity = $request->Quantity;
-        $product->ProductImage = $image;
+        if($request->hasFile('ProductImage')){
+            Storage::delete($product->ProductImage);
+            $product->ProductImage = $image;
+        }
         $product->save();
        // print_r($request->all());
     //    return redirect()->back();
-       return redirect()->route('admin.product')->with('success','Product Data updated Successfully');
+       return redirect()->route('product.index');
 
     }
 

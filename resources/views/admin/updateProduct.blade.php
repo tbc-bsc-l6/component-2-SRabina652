@@ -38,7 +38,8 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputImage" class="form-label">Product Image</label>
-    <input type="file" class="form-control" name="ProductImage" value="{{$product->ProductImage}}">
+    <input type="file" class="form-control" name="ProductImage" value="{{asset('uploads/'.$product->ProductImage)}}">
+    <img src="{{asset('uploads/'.$product->ProductImage)}}" width="60px" height="60px">
     @error('ProductImage')
     <div class="text-danger">{{ $message }}</div>
     @enderror

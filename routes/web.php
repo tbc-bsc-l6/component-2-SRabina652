@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/addItem',function(){
-    return view('admin.product');
+    return view('admin.product')->name('admin.product');
 });
 
 Route::get('/dashboard', function () {
@@ -40,3 +41,7 @@ require __DIR__.'/auth.php';
 Route::prefix('admin')->middleware(['auth','adminOnly'])->group(function(){
    Route::resource('product', ProductController::class);
 });
+
+
+//to fetch the data of the users
+Route::get('/users',[userController::class,'index']);
