@@ -30,7 +30,7 @@ class ProductController extends Controller
         // print_r($products);
         // echo "</pre>";
         // die;
-       return view('admin.product',compact('products'))->with('i',(request()->input('page',1) - 1)*10);
+       return view('layouts.admin.product',compact('products'))->with('i',(request()->input('page',1) - 1)*10);
 
         // return view('admin.product',compact('product'));
         // return View::make('admin.product')->with(compact('products'));
@@ -43,7 +43,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-      return view('admin.addProduct');
+      return view('layouts.admin.addProduct');
     //  return view('product.create');
     }
 

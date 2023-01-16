@@ -72,59 +72,22 @@
     </header>
 
     <section class="container mx-auto mt-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('/images/5.jpg')}}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="bg-dark p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid iste laboriosam cum animi magni voluptatibus, expedita neque? Vero excepturi explicabo dolor consectetur tenetur pariatur reprehenderit optio iure iste officia!</p>
-                        <div class="align-self-center mx-auto text-center mt-5">
-                            <button class="main-btn">Explore</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="container banner mt-4">
+      <div class="row" style="gap: 3rem;">
+        <div class="col-lg-5 col-md-6 pt-1 ps-5">
+          <h2>A troubled intestine can send signals to the brain, just as a troubled brain can send signals to the gut.
+          </h2>
 
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('/images/2.jpg')}}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="bg-dark p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid iste laboriosam cum animi magni voluptatibus, expedita neque? Vero excepturi explicabo dolor consectetur tenetur pariatur reprehenderit optio iure iste officia!</p>
-                        <div class="align-self-center mx-auto text-center mt-5">
-                            <button class="main-btn">Explore</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('/images/3.jpg')}}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="bg-dark p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid iste laboriosam cum animi magni voluptatibus, expedita neque? Vero excepturi explicabo dolor consectetur tenetur pariatur reprehenderit optio iure iste officia!</p>
-                        <div class="align-self-center mx-auto text-center mt-5">
-                            <button class="main-btn">Explore</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('/images/4.jpg')}}" alt="Fourth slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="bg-dark p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid iste laboriosam cum animi magni voluptatibus, expedita neque? Vero excepturi explicabo dolor consectetur tenetur pariatur reprehenderit optio iure iste officia!</p>
-                        <div class="align-self-center mx-auto text-center mt-5">
-                            <button class="main-btn">Explore</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only text-black">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+          <div class="mt-4">
+            <button class="main-btn">Explore</button>
+          </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 ">
+          <img src="/images/foodpng4.png" alt="image" class="img-responsive banner-img">
+        </div>
+      </div>
+    </div>
         </div>
         <!-- <h2 class="text-center">A troubled intestine can send signals to the brain, just as a troubled brain can send signals to the gut.
   </h2> -->

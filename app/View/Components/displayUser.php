@@ -4,17 +4,17 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class displayProducts extends Component
+class displayUser extends Component
 {
-    public $products;
+    public $customers;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($products)
+    public function __construct($customers)
     {
-        $this->products=$products;
+        $this->customers=$customers;
     }
 
     /**
@@ -24,6 +24,6 @@ class displayProducts extends Component
      */
     public function render()
     {
-        return view('components.display-products');
+        return view('components.display-user');
     }
 }

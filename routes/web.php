@@ -40,8 +40,14 @@ require __DIR__.'/auth.php';
 // admin section
 Route::prefix('admin')->middleware(['auth','adminOnly'])->group(function(){
    Route::resource('product', ProductController::class);
+
+   //for users
+   Route::get('/users',[userController::class,'index']);
+   Route::get('/addUsers',[userController::class,'create']);
+    Route::post('/addUsers',[userController::class,'store']);
+    Route::delete('/user/delete/{id}',[userController::class,'destroy'])->name('user.delete');
+
 });
 
 
 //to fetch the data of the users
-Route::get('/users',[userController::class,'index']);
