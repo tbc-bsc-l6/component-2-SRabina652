@@ -23,8 +23,13 @@ class FrontendController extends Controller
             return redirect()->back();
         }
     }
-    public function displayAll(){
-        $allProducts=Product::all();
-        return view('allfoods', compact('allProducts'));
+    public function displayAll(Request $request){
+        $search =$request['search']??"";
+        if($search != ""){
+            $allProducts=Product::where('ProductName','LIKE',"%$search%")->orWhere('ProductPrice','=',$search)->get();
+        }else{
+            $allProducts=Product::all();
+        }
+        return view('allfoods', compact('allProducts','search'));
     }
 }
