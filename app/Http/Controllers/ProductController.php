@@ -33,7 +33,7 @@ class ProductController extends Controller
         // print_r($products);
         // echo "</pre>";
         // die;
-       return view('layouts.admin.product',compact('products'))->with('i',(request()->input('page',1) - 1)*10);
+       return view('admin.product',compact('products'))->with('i',(request()->input('page',1) - 1)*10);
 
         // return view('admin.product',compact('product'));
         // return View::make('admin.product')->with(compact('products'));
@@ -47,7 +47,7 @@ class ProductController extends Controller
     public function create()
     {
         $data=Category::all();
-      return view('layouts.admin.addProduct',['data'=>$data]);
+      return view('admin.addProduct',['data'=>$data]);
     //  return view('product.create');
     }
 
@@ -101,10 +101,10 @@ class ProductController extends Controller
     {
         $product=Product::findorFail($id);
         if(is_null($product)){
-            return redirect('layouts.admin.product');
+            return redirect('admin.product');
         }else{
             $data = compact('product');
-            return view('layouts.admin.updateProduct')->with($data);
+            return view('admin.updateProduct')->with($data);
         }
         // return view('admin.updateProduct',compact('id'));
     }

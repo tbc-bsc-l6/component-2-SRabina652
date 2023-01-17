@@ -14,10 +14,10 @@ class userController extends Controller
         $customers=User::latest()->paginate(7);
       // return view('layouts.admin.user.index',compact('users'))->with('i',(request()->input('page',1) - 1)*10);
        // $users=User::all();
-        return view('layouts.admin.user.index',compact('customers'));
+        return view('admin.user.index',compact('customers'));
     }
     public function create(){
-        return view('layouts.admin.user.adduser');
+        return view('admin.user.adduser');
     }
     public function store(Request $request){
             $request->validate([

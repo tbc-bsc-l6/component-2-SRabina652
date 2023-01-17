@@ -79,9 +79,7 @@ a{
     transition: all .4s ease-out 0s;
 }
 
-a:hover{
-    /* color: var(--secondary-color) !important; */
-}
+
 ul,
 li{
     margin-inline: 10px;
@@ -189,3 +187,7 @@ li{
     font-size:28px; 
     color: black;
   }
+
+.capitalLetter{
+    text-transform: capitalize;
+}

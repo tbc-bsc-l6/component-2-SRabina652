@@ -20,80 +20,57 @@
 <body>
     <!-- header -->
     <header>
-        <nav class="navbar navbar-expand-lg nav-wrap">
-            <div class="container">
-                <!-- <a class="navbar-brand" href="#"> -->
-                <img src="{{asset('/images/logo.png')}}" alt="Logo" width="150" height="35">
-                <!-- </a> -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" style="color:#000; font-size:28px;">
-                        <!-- <i class="fa-sharp fa-solid fa-bars-staggered" style="color:#000; font-size:28px;"></i> -->
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">AboutUs</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Foods</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Reviews</a>
-                        </li> -->
-                        @if (Route::has('login'))
-                        @auth
-                        <li class="nav-item">
-                            <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
-                        </li>
-                        @else
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link">Log in</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link">Register</a>
-                        </li>
-                        @endif
-                        @endauth
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div>
-
-
-
+            <nav class="navbar navbar-expand-lg nav-wrap">
+                <div class="container">
+                    <x-navbar />
+                </div>
+            </nav>
         </div>
     </header>
 
     <section class="container mx-auto mt-5">
-    <div class="container banner mt-4">
-      <div class="row" style="gap: 3rem;">
-        <div class="col-lg-5 col-md-6 pt-1 ps-5">
-          <h2>A troubled intestine can send signals to the brain, just as a troubled brain can send signals to the gut.
-          </h2>
+        <div class="container banner mt-4">
+            <div class="row" style="gap: 3rem;">
+                <div class="col-lg-5 col-md-6 pt-1 ps-5">
+                    <h2>A troubled intestine can send signals to the brain, just as a troubled brain can send signals to the gut.
+                    </h2>
 
-          <div class="mt-4">
-            <button class="main-btn">Explore</button>
-          </div>
+                    <!-- <div class="mt-4">
+                        <button class="main-btn">Explore</button>
+                    </div> -->
 
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                    <img src="/images/foodpng4.png" alt="image" class="img-responsive banner-img">
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-6 ">
-          <img src="/images/foodpng4.png" alt="image" class="img-responsive banner-img">
-        </div>
-      </div>
-    </div>
         </div>
         <!-- <h2 class="text-center">A troubled intestine can send signals to the brain, just as a troubled brain can send signals to the gut.
   </h2> -->
 
     </section>
 
+    <div class="container pt-5">
+
+        <div class="row">
+            <div class="col ">
+                <div class="text-center">
+                    <h3 class="mb-5">Our Categories</h3>
+                    @foreach($category as $cat)
+                    <li class="d-inline p-4">
+
+                        <a href="{{url('/foods/'.$cat->name)}}" class="main-btn link">
+                            {{$cat->name}}
+                        </a>
+                    </li>
+                    @endforeach
+                </div>
+                <hr style="width:40%; height:5px; margin:auto; " class="mt-5">
+            </div>
+        </div>
+    </div>
 
     <!-- foods section div -->
     <div class="foods">
@@ -122,9 +99,9 @@
 
     <div class="container  banner text-center">
         <div class="card-body">
-            <h2 class="card-title text-danger">Special title treatment</h2>
+            <h2 class="card-title text-warning">Special title treatment</h2>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <button class="main-btn">Contact Us</button>
+            <!-- <button class="main-btn">Contact Us</button> -->
             <div>
                 <a href="https://www.facebook.com/home.php" target="_blank"><i class="fa-brands fa-facebook footericon"></i></a>
                 <a href="https://www.facebook.com/home.php" target="_blank"><i class="fa-brands fa-twitter footericon"></i></a>
