@@ -3,6 +3,7 @@
  <thead class="bg-success text-white fw-bold">
     <th>Product Name</th>
     <th>Product Price</th>
+    <th>Category</th>
     <th>Quantity</th>
     <th>Product Image</th>
     <th>Edit</th>
@@ -13,6 +14,7 @@
     <tr>
     <td class="align-middle">{{$product->ProductName}}</td>
     <td class="align-middle">{{$product->ProductPrice}}</td>
+    <td class="align-middle">{{$product->category?->name}}</td>
     <td class="align-middle">{{$product->Quantity}}</td>
     <td class="align-middle"><img src="{{ asset('uploads/' .$product->ProductImage) }}" class="img-thumbnail"></td>
     <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-light">Edit</a></td>    

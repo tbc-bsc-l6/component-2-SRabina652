@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
@@ -12,6 +14,7 @@ class ProductController extends Controller
         $request->validate([
             'ProductName' => ['required', 'string', 'max:255'],
             'ProductPrice' => ['required', 'integer'],
+            'category_id' =>['required', 'integer'],
             'Quantity' => ['required', 'integer'],
             'ProductImage' => ['required','image','mimes:jpeg,png,jpg,gif'],
             ]);
@@ -43,7 +46,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-      return view('layouts.admin.addProduct');
+        $data=Category::all();
+      return view('layouts.admin.addProduct',['data'=>$data]);
     //  return view('product.create');
     }
 
@@ -66,6 +70,7 @@ class ProductController extends Controller
         $data = new Product;
         $data->ProductName = $request->ProductName;
         $data->ProductPrice = $request->ProductPrice;
+        $data->category_id = $request->category_id;
         $data->Quantity = $request->Quantity;
         $data->ProductImage = $image;
         $data->save();
@@ -96,10 +101,10 @@ class ProductController extends Controller
     {
         $product=Product::findorFail($id);
         if(is_null($product)){
-            return redirect('admin.product');
+            return redirect('layouts.admin.product');
         }else{
             $data = compact('product');
-            return view('admin.updateProduct')->with($data);
+            return view('layouts.admin.updateProduct')->with($data);
         }
         // return view('admin.updateProduct',compact('id'));
     }

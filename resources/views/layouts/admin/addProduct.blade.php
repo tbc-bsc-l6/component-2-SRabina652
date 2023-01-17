@@ -29,6 +29,14 @@
     @enderror
   </div>
   <div class="mb-3">
+    <label for="exampleInputquantity" class="form-label">Category:&nbsp;&nbsp;</label>
+    <select name="category_id" id="" class="px-4 p-1">
+      @foreach($data as $row)
+      <option value="{{$row->id}}">{{$row->name}}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="mb-3">
     <label for="exampleInputquantity" class="form-label">Quantity</label>
     <input type="number" class="form-control" name="Quantity" value ="{{old('Quantity')}}">
     @error('Quantity')
