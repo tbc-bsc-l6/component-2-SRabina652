@@ -87,21 +87,7 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <p>
-                  Forms
-                </p>
-              </a>
-
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <p>
-                  Tables
-                </p>
-              </a>
-            </li>
+          
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
               @csrf

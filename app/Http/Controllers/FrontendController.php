@@ -26,11 +26,16 @@ class FrontendController extends Controller
     public function displayAll(Request $request){
         $search =$request['search']??"";
         if($search != ""){
-            $allProducts=Product::where('ProductName','LIKE',"%$search%")->orWhere('ProductPrice','=',$search)->get();
+            $allProducts=Product::where('ProductName','LIKE',"%$search%")->orWhere('ProductPrice','=',$search)->paginate(6);
+            return view('allfoods', compact('allProducts','search'));
+    
         }else{
-            $allProducts=Product::all();
+            $allProducts=Product::latest()->paginate(6);
+            return view('allfoods', compact('allProducts','search'))->with('i',(request()->input('page',1) - 1)*12);
         }
         return view('allfoods', compact('allProducts','search'));
+    
+        
     }
     public function adminDashboard(){
         return view('admin.layout.adminlayout');

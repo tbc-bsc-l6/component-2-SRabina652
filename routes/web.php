@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/admin/dashboard',[FrontendController::class, 'adminDashboard']);
+    
 });
 
 require __DIR__.'/auth.php';
@@ -53,6 +53,7 @@ Route::prefix('admin')->middleware(['auth','adminOnly'])->group(function(){
    Route::get('/addUsers',[userController::class,'create']);
     Route::post('/addUsers',[userController::class,'store']);
     Route::delete('/user/delete/{id}',[userController::class,'destroy'])->name('user.delete');
+    Route::get('/admin/product',[FrontendController::class, 'adminDashboard']);
 
 });
 
