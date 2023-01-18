@@ -17,10 +17,15 @@
 
         @if (Route::has('login'))
         @auth
-        <x-app-layout/>
+
         <li class="nav-item">
-            <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
+            <a href="{{ url('/profile') }}" class="nav-link">Profile</a>
         </li>
+        <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-power -off"></i>Logout</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+
         @else
         <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">Log in</a>

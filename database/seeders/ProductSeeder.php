@@ -16,14 +16,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        for ($i = 1; $i <= 20; $i++){
-        $data = new Product;
-        $data->ProductName = $faker->word() . ' utensils';////randomElement(Brands::pluck('name')) . ' utensil';
-        $data->ProductPrice = $faker->numberBetween($min=0, $max=100000);
-        $data->Quantity = $faker->numberBetween($min=0, $max=100000);
-        $data->ProductImage = $faker->imageUrl($width=150, $height=150);
-        $data->save();       
-    }
+       Product::factory(10)->create();
     }
 }
