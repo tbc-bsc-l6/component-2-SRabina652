@@ -18,9 +18,9 @@
         @if (Route::has('login'))
         @auth
         <x-app-layout/>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
             <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
-        </li> -->
+        </li>
         @else
         <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">Log in</a>
