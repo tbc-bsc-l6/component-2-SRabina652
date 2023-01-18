@@ -32,4 +32,7 @@ class FrontendController extends Controller
         }
         return view('allfoods', compact('allProducts','search'));
     }
+    public function adminDashboard(){
+        return view('admin.layout.adminlayout');
+    }
 }

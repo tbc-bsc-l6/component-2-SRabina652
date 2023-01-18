@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Roboto&display=swap');
+*,
+*::after,
+*::before{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+
+:root{
+    --primary-color: #f5ba41;
+    --secondary-color:black;
+    --gray-color:#616161;
+    --light-gray-color:#e0e0e0;
+    --orange-color:#ffab00;
+    --white-color:white;
+    --red-color:#d50000;
+    --green-color:#388e3c;
+    --primary-font:'Montserrat', sans-serif;
+    --secondary-font:'Roboto', sans-serif;
+    --primary-font-size:18px;
+    --secondary-font-size:25px;
+}
+
+.form-error {
+
+    border: 2px solid #e74c3c;
+  }
+
+.link{
+   text-decoration: none;
+   color: green;
+}
+.link:hover{
+    color: white;
+}
+
+.img-thumbnail{
+    width: 70px;
+}
+table{
+    text-align: left
+}
+tr{
+    padding: 5px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--primary-font);
+    font-size: 20px;  
+}
+
+p{
+    text-align: center;
+}
+
+:active,
+:hover,
+:focus{
+    outline: 0 !important;
+    outline-offset: 0;
+}
+
+a{
+    transition: all .4s ease-out 0s;
+}
+
+
+ul,
+li{
+    margin-inline: 10px;
+    padding: 0;
+}
+
+
+/* css heading designs */
+
+
+
+/* for button  */
+
+.main-btn{
+    display: inline-block;
+    padding: 0.65rem 1.875rem;
+    line-height: 1.5625rem;
+    background-color: var(--primary-color);
+    font-family:var(--primary-font);
+    border: none;
+    color: var(--white-color);
+    font-size: 0.9375rem;
+    text-transform: capitalize;
+    box-shadow: 0px 2px 10px -1px rgb(0, 0, 0 /19%);
+    transition: all .4s ease-out 0s;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+.main-btn:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border:2px solid var(--primary-color);
+}
+
+.white-btn{
+    display: inline-block;
+    padding: 0.65rem 1.875rem;
+    line-height: 1.5625rem;
+    background-color: var(--white-color);
+    font-family:var(--primary-font);
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.9375rem;
+    text-transform: capitalize;
+    box-shadow: 0px 2px 10px -1px rgb(0, 0, 0 /19%);
+    transition: all .4s ease-out 0s;
+    margin-bottom: 5px;
+}
+
+.white-btn:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+.wrapper{
+    padding-top: 8.2rem;
+    padding-bottom: 8.25rem;
+    font-family:var(--primary-font);
+
+}
+
+.text-content{
+    width: 70%;
+    margin: auto;
+}
+
+/* for toogle navbar */
+
+.navbar-toggler:focus{
+    outline: unset;
+    border: unset;
+    box-shadow: none;
+}
+.banner{
+    padding: 5rem 0rem 1rem 3rem;
+    width: 100%;
+    background-color: var(--light-gray-color);
+    border-radius: 35px;
+    font-family:var(--primary-font);
+}
+/* banner section  */
+.banner-img{
+    width:90%;
+    height:90%;
+    object-fit: fill;
+    border-radius: 25px;
+}
+
+/* toogle bars */
+.navbar-toggler-icon {
+    background-image: none;
+  }
+  .navbar-toggler-icon::before {
+    font-family: FontAwesome;
+    content: "\f0c9"; /* fa-bars, fa-navicon */
+  }
+
+  /* foods section */
+
+  .foods{
+    width: 100vw;
+    padding: 50px;
+  }
+  .footericon{
+    font-size:28px; 
+    color: black;
+  }
+
+.capitalLetter{
+    text-transform: capitalize;
+}

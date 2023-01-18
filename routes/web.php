@@ -25,6 +25,7 @@ Route::get('/',[FrontendController::class, 'index']);
 Route::get('/foods/{name}',[FrontendController::class, 'product']);
 Route::get('/allfoods',[FrontendController::class, 'displayAll']);
 
+
 Route::get('/addItem',function(){
     return view('admin.product')->name('admin.product');
 });
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/dashboard',[FrontendController::class, 'adminDashboard']);
 });
 
 require __DIR__.'/auth.php';
