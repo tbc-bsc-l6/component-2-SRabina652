@@ -25,6 +25,16 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
       </ul>
+      <!-- Authentication -->
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+          {{ __('Log Out') }}
+        </x-dropdown-link>
+      </form>
+
 
 
     </nav>
@@ -86,16 +96,6 @@
                 </p>
               </a>
             </li>
-          
-            <!-- Authentication -->
-            <form method="POST" action="{{ route('logout') }}">
-              @csrf
-
-              <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                {{ __('Log Out') }}
-              </x-dropdown-link>
-            </form>
 
 
             <!-- /.sidebar-menu -->

@@ -27,6 +27,11 @@
             @csrf
         </form>
 
+        @if(Auth::user()->status=='1')
+        <li class="nav-item">
+            <a href="{{ url('/admin/product') }}" class="nav-link">AdminDashboard</a>
+        </li>
+     @endif
         @else
         <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">Log in</a>
