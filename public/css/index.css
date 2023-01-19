@@ -191,3 +191,6 @@ li{
 .capitalLetter{
     text-transform: capitalize;
 }
+lable{
+    width: 70%;
+}

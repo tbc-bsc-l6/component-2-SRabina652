@@ -2,9 +2,10 @@
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon" style="color:#000; font-size:28px;">
-        <!-- <i class="fa-sharp fa-solid fa-bars-staggered" style="color:#000; font-size:28px;"></i> -->
+       
     </span>
 </button>
+
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">

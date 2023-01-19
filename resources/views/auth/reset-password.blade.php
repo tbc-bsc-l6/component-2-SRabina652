@@ -1,4 +1,6 @@
 <x-guest-layout>
+<h1 style="font-size:20px; font-weight:bold; margin-bottom:20px;">Reset Password</h1>
+
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -31,7 +33,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
+            <x-primary-button style="color:white; margin-right:10px; background-color:#6200ea;">
                 {{ __('Reset Password') }}
             </x-primary-button>
         </div>

@@ -22,11 +22,11 @@
           </div>
           <div class="d-inline p-3">
             @if($prod->Quantity > 0)
-            <span class="px-4 text-success">In Stock</span>
+            <span class="px-3 text-success">In Stock</span>
             @else
-            <span class="px-4 text-danger">Out of Stock</span>
+            <span class="px-3 text-danger">Out of Stock</span>
             @endif
-            <span class="px-5">${{$prod->ProductPrice}}</span>
+            <span class="px-4">${{$prod->ProductPrice}}</span>
           </div>
 
         </div>

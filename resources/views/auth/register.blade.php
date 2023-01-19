@@ -1,10 +1,11 @@
 <x-guest-layout>
+    <h1 style="margin-bottom: 25px; font-weight:bold;">Register now</h1>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('UserName')" />
+            <x-input-label for="name" :value="__('UserName')"/>
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -66,7 +67,7 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4">
+            <x-primary-button style="color:white; margin-right:10px; background-color:#F5BA41;" class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
         </div>

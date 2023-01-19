@@ -5,6 +5,7 @@
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <h1 style="font-size:20px; font-weight:bold; margin-bottom:20px;">Forgot Password</h1>
 
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
@@ -17,7 +18,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
+            <x-primary-button style="color:white; margin-right:10px; background-color:#6200ea; ">
                 {{ __('Email Password Reset Link') }}
             </x-primary-button>
         </div>

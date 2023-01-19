@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
 
@@ -15,16 +17,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+      //   Category::trunacate();
        $this->call([
         UserSeeder::class
       ]);
 
-        // \App\Models\User::factory(10)->create();
+       
         \App\Models\Product::factory(30)->create();
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+       Category::create([
+        'name'=>'Food'
+       ]);
+       Category::create([
+        'name'=>'Drink'
+       ]);
+       Category::create([
+        'name'=>'Desert'
+       ]);
     }
 }
